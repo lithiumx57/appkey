@@ -1,0 +1,42 @@
+.toast-container {
+  position: fixed;
+  width: 300px;
+  //height: 60px;
+  top: -100px;
+  left: 0;
+  right: 0;
+  //line-height: 60px;
+  padding: 0 16px 0 0;
+  margin: auto;
+  z-index: 12002;
+  border-radius: var(--border-radius);
+  display: flex;
+  justify-content: space-between;
+  transition: 200ms;
+
+  color: #fff;
+
+  &.success {
+    background: #1ea57d;
+  }
+
+  &.default {
+    background: #222;
+  }
+
+  &.error {
+    background: #ff4444;
+  }
+
+  .message {
+    padding: 0 0 0 16px;
+  }
+
+  .close {
+    cursor: pointer;
+    width: 20px;
+    text-align: center;
+    height: 20px;
+    margin-left: 8px;
+  }
+}

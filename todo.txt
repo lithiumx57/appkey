@@ -1,0 +1,13 @@
+php artisan seo:generate-favicons public/path-to/logo.png
+add gif in uploader
+
+
+link popup iframe
+better comments
+dialog in text like wikipedia
+
+
+/single link https http ... / last
+
+
+دیالگ ها کلیک راست می کنیم بسته میشن

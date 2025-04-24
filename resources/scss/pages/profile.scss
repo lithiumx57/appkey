@@ -1,0 +1,126 @@
+$minWidth: 1000px;
+
+.profile-dashboard-rows {
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile-dashboard-row {
+  width: calc(33% - 16px);
+  line-height: 43px;
+  background: transparent !important;
+  height: 86px !important;
+
+
+}
+
+.profile-container {
+
+
+  width: 1186px;
+  margin: auto;
+  max-width: calc(100% - 4px);
+  @media (min-width: $minWidth) {
+    max-width: calc(100% - 32px);
+  }
+
+  .p-breadcrumb {
+    margin-right: 16px;
+    @media (max-width: 999px) {
+      margin-top: 24px;
+    }
+
+    ul {
+      margin: 0;
+      padding: 12px;
+      display: flex;
+      list-style: none;
+      align-items: center;
+
+      svg {
+        position: relative;
+        top: 2px;
+      }
+
+      li {
+        margin-left: 8px;
+      }
+
+      a {
+        color: inherit;
+        border-bottom: 1px dashed var(--border-color);
+        text-decoration: none;
+      }
+    }
+  }
+
+  .p-nav-link {
+    &.active {
+      color: #0da3da;
+
+      svg {
+        fill: #0da3da
+      }
+    }
+  }
+
+
+  @media (min-width: $minWidth) {
+    display: flex;
+    align-items: center;
+    .back-part {
+      //display: none;
+    }
+  }
+
+  .navigation {
+    width: 100%;
+    padding: 4px 0;
+
+
+    ul {
+      padding: 0;
+      list-style: none;
+
+      li {
+        margin-top: 8px;
+        padding: 8px;
+
+        a {
+          text-decoration: none;
+          color: inherit;
+          display: flex;
+          align-items: center;
+
+          svg {
+            margin-left: 8px;
+            fill: var(--full-color);
+          }
+        }
+      }
+
+    }
+  }
+
+  .content {
+    padding: 8px;
+    margin-top: 24px !important;
+    margin-right: 16px;
+  }
+
+
+  .profile-navigation {
+    display: flex; // برای استفاده از justify-content و align-items
+    margin-top: 24px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  @media (min-width: $minWidth) { // جایگزینی $minWidth با یک مقدار مشخص
+    .profile-navigation {
+      width: 280px;
+    }
+  }
+
+}

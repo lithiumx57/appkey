@@ -1,0 +1,63 @@
+.x-pagination {
+  .d-flex.justify-content-between.flex-fill.d-sm-none {
+    display: none !important;
+  }
+
+  .small.text-muted {
+    display: none;
+  }
+}
+
+
+.pagination {
+  display: flex;
+  list-style: none;
+
+
+  .page-item {
+    width: 38px;
+    height: 38px;
+    margin: 0 2px;
+
+
+    button {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-radius: var(--border-radius);
+      background: var(--box-background);
+      border: 0;
+      color: var(--full-color);
+      cursor: pointer;
+    }
+
+    &.active {
+      span {
+        display: block;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        line-height: 38px;
+        border-radius: var(--border-radius);
+        background: var(--search-border);
+
+      }
+    }
+
+    &.disabled {
+      span {
+        display: block;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        line-height: 38px;
+        border-radius: var(--border-radius);
+
+      }
+    }
+  }
+}
+
+.justify-items-center {
+  justify-content: center;
+}

@@ -1,0 +1,150 @@
+.w50input {
+  width: calc(100% - 16px);
+  margin: 16px auto;
+
+  .x-input-1 {
+    width: 100%;
+  }
+}
+
+@media (min-width: 800px) {
+  .w50input {
+    width: calc(50% - 16px);
+    display: inline-block;
+
+
+    &.right {
+      margin-right: 8px;
+    }
+
+    &.left {
+      margin-right: 12px;
+    }
+  }
+}
+
+
+.main {
+  @media (min-width: calc(800px)) {
+    width: calc(100% - 300px);
+    margin-left: 8px;
+  }
+}
+
+
+.box {
+  width: 100%;
+  max-width: none !important;
+  border-radius: var(--border-radius);
+}
+
+
+.aside {
+  position: relative;
+  top: 16px;
+  padding: 0 !important;
+  margin: 0 !important;
+
+  .box {
+    margin: 0;
+    width: 100%;
+  }
+
+  @media (min-width: calc(800px)) {
+    width: 300px;
+    top: 0;
+    margin-right: 16px !important;
+  }
+
+}
+
+@media (min-width: 800px) {
+  .ci-container {
+    display: flex;
+    align-content: start;
+    align-items: start;
+    max-width: calc(100% - 24px);
+    justify-content: center;
+    margin: auto;
+  }
+}
+
+
+.w-100 {
+  width: 100% !important;
+}
+
+.w-100mm4 {
+  width: 100%;
+  @media (min-width: 800px) {
+    width: calc(100% - 4px) !important;
+  }
+
+}
+
+.w-100mm8 {
+  width: calc(100% - 8px) !important;
+}
+
+.w-100mm12 {
+  width: calc(100% - 12px) !important;
+}
+
+.w-100mm16 {
+  width: calc(100% - 16px) !important;
+}
+
+.w-100mm20 {
+  width: calc(100% - 20px) !important;
+}
+
+.box {
+  margin: 0 auto;
+}
+
+.box-header {
+  font-weight: bold;
+  border-top-right-radius: var(--border-radius);
+  border-top-left-radius: var(--border-radius);
+  background: var(--header-backgrround);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  line-height: 42px;
+  padding-right: 12px;
+}
+
+@media (max-width: 799px) {
+  .aside, .main {
+    max-width: calc(100% - 24px);
+    margin: auto !important;
+  }
+}
+
+
+.fi {
+  fill: var(--full-color);
+}
+
+
+.gateway-row {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 8px;
+  border: 1px solid var(--border-color);
+  padding: 8px;
+  border-radius: var(--border-radius)
+}
+
+
+.gateway-box {
+  background: var(--header-backgrround);
+  position: relative;
+  border: 1px solid var(--header-backgrround);
+  width: 100%;
+  margin-top: 24px;
+  padding-bottom: 0
+}

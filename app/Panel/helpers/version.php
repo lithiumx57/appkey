@@ -1,0 +1,1 @@
+<?php const PANEL_VERSION =0.106 ?>

@@ -1,0 +1,7 @@
+body{direction: ltr;text-align: left}
+#sidebar-wrapper{right: auto;left: 0;}
+.sidebar-menu > li > a{text-align: left}
+.sidebar-menu > li > i{float: right}
+.pr{float: right}
+.sidebar-menu > li:hover > a, .sidebar-menu > li.active > a{border: 0}
+.content-wrapper{margin-right: 0;margin-left: 225px;padding-right: 0}

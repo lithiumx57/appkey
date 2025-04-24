@@ -1,0 +1,68 @@
+
+.dialog-content {
+  display: none;
+  opacity: 0;
+  transition: 100ms;
+  background: var(--menu-cover-background);
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto auto;
+  width: 0;
+  max-width: 90%;
+  z-index: 1100;
+  backdrop-filter: blur(30px);
+  height: 0;
+  box-shadow: var(--shadow);
+  border-radius: var(--border-radius);
+  padding: 16px;
+  scale: 0.1 !important;
+
+  &.active {
+    opacity: 1;
+    scale: 1 !important;
+    //width: 600px;
+    //height: 400px;
+  }
+
+
+  .dialog-body {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  &.show {
+    display: block;
+  }
+
+
+}
+
+.x-backdrop {
+  background: rgba(71, 71, 71, .3);
+  z-index: 1200;
+  display: none;
+  opacity: 0;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  transition: 100ms;
+  backdrop-filter: blur(5px);
+
+  &.active {
+    opacity: 1;
+  }
+
+  &.show {
+    display: block;
+  }
+}

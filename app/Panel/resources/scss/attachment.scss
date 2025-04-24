@@ -1,0 +1,151 @@
+.attachment-cover {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(24, 24, 24, 0.3);
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 999999999999999999;
+  display: none;
+}
+
+.attachment-cover.active {
+  display: block;
+}
+
+.attachment-container {
+  width: 1000px;
+  height: 600px;
+  max-width: 96%;
+  max-height: 96%;
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 7px 0 #888;
+}
+
+.attachment-header .fa-times {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  line-height: 40px;
+  text-align: center;
+}
+
+.attachment-header {
+  border-bottom: 1px solid #eee;
+  color: #222;
+  line-height: 40px;
+  padding-right: 8px;
+  display: flex;
+  justify-content: space-between;
+  background: #eeeeee;
+}
+
+.attachment-body {
+  color: #222;
+  padding: 8px;
+  overflow: auto;
+}
+
+.attachment-row {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 8px;
+  cursor: pointer;
+
+  box-shadow: 0 0 7px 0 #eee;
+  img,video,audio{
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto auto;
+  }
+}
+
+
+.attachment-row img, .attachment-row video, .attachment-row audio {
+  //position: absolute;
+  //left: 0;
+  //right: 0;
+  //margin: auto;
+
+  //object-fit: cover;
+  //object-position: -20% 0;
+}
+
+
+.attachment-row i {
+  position: absolute;
+  top: 4px;
+  left: 8px;
+  font-size: 20px;
+  z-index: 2;
+}
+
+.attachment-row .btn {
+  position: absolute;
+  bottom: 9px;
+  width: 90%;
+  left: 0;
+  right: 0;
+  margin: auto;
+
+  z-index: 5;
+}
+
+.pagination-item {
+  display: inline-block;
+  min-width: 24px;
+  height: 24px;
+
+  line-height: 24px;
+  cursor: pointer;
+  background: #eee;
+  border-radius: 100%;
+  margin-left: 4px;
+}
+
+.pagination-item.active {
+  background: #4444ff;
+  color: #fff;
+}
+
+.delete_attachment {
+  display: none;
+}
+
+.delete_attachment.active {
+  display: inline-block;
+}
+
+
+#document-dropzone {
+  background: #eee;
+  height: 60px;
+  color: #222;
+  margin: 16px 16px 0 16px;
+}
+
+.dropzone .dz-message {
+  margin: 0;
+}
+
+.attachment-body {
+  overflow-y: auto !important;
+  padding: 0 24px;
+}
+

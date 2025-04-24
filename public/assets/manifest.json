@@ -1,0 +1,59 @@
+{
+  "resources/js/app.js": {
+    "file": "js/app.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "resources/js/pages/home.js": {
+    "file": "js/home2.js",
+    "name": "home",
+    "src": "resources/js/pages/home.js",
+    "isEntry": true
+  },
+  "resources/scss/layouts/layout.scss": {
+    "file": "css/layout.css",
+    "src": "resources/scss/layouts/layout.scss",
+    "isEntry": true
+  },
+  "resources/scss/pages/articles.scss": {
+    "file": "css/articles.css",
+    "src": "resources/scss/pages/articles.scss",
+    "isEntry": true
+  },
+  "resources/scss/pages/complete-info.scss": {
+    "file": "css/complete-info.css",
+    "src": "resources/scss/pages/complete-info.scss",
+    "isEntry": true
+  },
+  "resources/scss/pages/home.scss": {
+    "file": "css/home.css",
+    "src": "resources/scss/pages/home.scss",
+    "isEntry": true
+  },
+  "resources/scss/pages/platform.scss": {
+    "file": "css/platform.css",
+    "src": "resources/scss/pages/platform.scss",
+    "isEntry": true
+  },
+  "resources/scss/pages/platforms.scss": {
+    "file": "css/platforms.css",
+    "src": "resources/scss/pages/platforms.scss",
+    "isEntry": true
+  },
+  "resources/scss/pages/product.scss": {
+    "file": "css/product.css",
+    "src": "resources/scss/pages/product.scss",
+    "isEntry": true
+  },
+  "resources/scss/pages/profile.scss": {
+    "file": "css/profile.css",
+    "src": "resources/scss/pages/profile.scss",
+    "isEntry": true
+  },
+  "resources/scss/pages/search.scss": {
+    "file": "css/search.css",
+    "src": "resources/scss/pages/search.scss",
+    "isEntry": true
+  }
+}

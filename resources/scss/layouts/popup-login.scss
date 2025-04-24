@@ -1,0 +1,139 @@
+:root {
+  --primary-color: #ef4056;
+  --success-color: #199f9f;
+}
+
+.login-logo img {
+  width: 180px;
+}
+
+
+
+.login-logo {
+  text-align: center;
+  margin: auto;
+}
+
+.auth-container {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+  width: 100%;
+  padding-top: 100px;
+  position: absolute !important;
+}
+
+.login-input {
+  margin-top: 4px;
+  width: 100%;
+  height: 42px;
+  border: 0;
+  text-align: center;
+  border-bottom: 2px solid var(--primary-color);
+  border-radius: 8px;
+  background: var(--input-background);
+  padding: 0 16px;
+  outline: none;
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-family: x-font-normal;
+}
+
+
+.input-hint {
+  font-size: 12px;
+  display: block;
+  color: var(--primary-color);
+  font-family: x-font-bold;
+  text-align: right;
+  margin-top: 8px;
+}
+
+
+.subtext a {
+  padding: 0 4px;
+  text-decoration: none;
+
+}
+
+.subtext {
+  font-size: 12px !important;
+  margin-top: 16px;
+  color: var(--text-color);
+}
+
+
+.logo {
+  font-size: 32px;
+}
+
+.auth-container {
+  max-width: 400px;
+}
+
+.auth-container {
+  position: absolute;
+  border: 1px solid var(--border-radius);
+  border-radius: var(--border-radius);
+  padding: 8px 8px 32px 8px;
+  left: 0;
+  width: 350px;
+  max-width: 96%;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto auto;
+  height: 420px;
+  overflow-y: auto;
+}
+
+@media (max-height: 420px) {
+  .auth-container {
+    margin-top: 54px;
+    margin-bottom: 54px;
+  }
+
+  .auth-parent {
+    height: 100vh;
+    padding-top: 420px
+  }
+}
+
+.login-h1 {
+  font-size: 16px;
+  font-family: x-font-bold;
+  margin-bottom: 16px;
+  color: var(--full-color);
+}
+
+.hello {
+  text-align: right;
+  font-size: 13px;
+  color: var(--text-color);
+  margin-top: 24px;
+}
+
+.el {
+  text-align: right;
+  font-size: 13px;
+  color: var(--text-color);
+}
+
+.emt {
+  text-align: right;
+  font-size: 13px;
+  color: var(--text-color);
+  padding-bottom: 8px
+}
+
+.button-styles {
+  width: 120px;
+  height: 48px
+}
+
+.button-loader {
+  position: relative;
+  left: 0px;
+  top: 2px;
+}

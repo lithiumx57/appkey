@@ -1,0 +1,19 @@
+@import "./public";
+@import "./attachment";
+
+
+#maplat-lng{
+  margin-top: 16px;
+  width: 100% !important;
+}
+
+.leaflet-control-zoom-in,.leaflet-control-zoom-out{
+  font-size: 24px;
+  right: 4px !important;
+  position: relative !important;
+  z-index: 0 !important;
+}
+.leaflet-control-container{
+  position: relative !important;
+  z-index: 0 !important;
+}

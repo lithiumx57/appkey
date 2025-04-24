@@ -1,0 +1,60 @@
+@import "./light";
+
+.background-light {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  opacity: 0.3;
+  filter: blur(120px);
+}
+
+.light1 {
+  background: #A855F7; /* light-purple */
+  animation: moveLight 8s infinite alternate ease-in-out;
+  left: 0;
+  top: 0;
+}
+
+.light2 {
+  background: #F472B6; /* light-pinkish-reddish */
+  animation: moveLight2 10s infinite alternate ease-in-out;
+  right: 0;
+  bottom: 0;
+}
+
+@keyframes moveLight {
+  0%, 100% {
+    transform: translate(-50%, -50%);
+  }
+  50% {
+    transform: translate(50%, 50%);
+  }
+}
+
+@keyframes moveLight2 {
+  0%, 100% {
+    transform: translate(50%, 50%);
+  }
+  50% {
+    transform: translate(-50%, -50%);
+  }
+}
+
+::placeholder {
+  color: var(--input-color);
+}
+
+body, input {
+  direction: rtl;
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  text-align: right;
+  font-size: 14px;
+  font-family: x-font-normal;
+  color: var(--text-color);
+}
+
+.align-items-center {
+  align-items: center;
+}

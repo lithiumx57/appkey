@@ -1,0 +1,78 @@
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  padding-top: 16px;
+
+  ul {
+    list-style: none;
+    display: flex;
+    padding-right: 16px;
+    margin: 0;
+
+    li {
+      padding: 0 0 0 16px;
+
+      .main {
+        font-weight: bold;
+      }
+
+      a {
+        padding-left: 8px;
+        color: var(--text-color);
+        border-bottom: 1px dashed var(--text-color);
+        text-decoration: none;
+      }
+
+      span {
+        color: var(--text-color);
+      }
+    }
+  }
+
+  .breadcrumb-location {
+    fill: var(--primary-color);
+    display: inline-block;
+    width: 32px;
+    text-align: center;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .breadcrumb ul {
+    padding-bottom: 16px;
+    padding-right: 0;
+  }
+
+  .breadcrumb-location {
+    display: none !important;
+
+    ul {
+      padding-right: 0 !important;
+    }
+  }
+  .breadcrumb ul {
+    flex-wrap: nowrap;
+  }
+
+  .breadcrumb ul {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: thin; /* برای فایرفاکس */
+    -ms-overflow-style: none; /* برای اینترنت اکسپلورر */
+  }
+
+  .breadcrumb ul::-webkit-scrollbar {
+    height: 4px; /* ارتفاع اسکرول‌بار */
+  }
+
+  .breadcrumb ul::-webkit-scrollbar-thumb {
+    background: #ccc; /* رنگ اسکرول‌بار */
+    border-radius: 2px;
+  }
+  .breadcrumb ul {
+    scroll-behavior: smooth;
+  }
+}
+
