@@ -7,8 +7,11 @@ use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PlatformsController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Product;
+use App\Panel\Search\XSearchBuilder;
 use App\Panel\UiHandler\Elements\XMediaChooser;
 use Illuminate\Support\Facades\Route;
+
 
 
 
@@ -20,6 +23,10 @@ Route::group(["prefix" => "/", "middleware" => ["frontend"]], function () {
   Route::any("/profile/{method?}/{p1?}/{p2?}/{p3?}", [ProfileController::class, 'route']);
 
   Route::get('/auth', [PagesController::class, 'login'])->name('login');
+  Route::any('/logout', function (){
+    Auth::logout();
+    return back();
+  });
   Route::get('/contact-us', [PagesController::class, 'contactUs']);
   Route::get('/search', [PagesController::class, 'search'])->name('search');
   Route::get('/blog/{slug}', [BlogController::class, 'single']);

@@ -37,22 +37,22 @@
 
             <ul>
               <li>
-                <a href="/about-us">درباره ما</a>
+                <a wire:navigate href="/about-us">درباره ما</a>
               </li>
               <li>
-                <a href="/contact-us">تماس با ما</a>
+                <a  wire:navigate href="/contact-us">تماس با ما</a>
               </li>
               <li>
-                <a href="/laws">قوانین و مقررات</a>
+                <a  wire:navigate href="/laws">قوانین و مقررات</a>
               </li>
               <li>
-                <a href="/faqs">سوالات پر تکرار</a>
+                <a  wire:navigate href="/faqs">سوالات پر تکرار</a>
               </li>
               <li>
-                <a href="/privacy">حریم خصوصی</a>
+                <a wire:navigate href="/privacy">حریم خصوصی</a>
               </li>
               <li>
-                <a href="/blog">وبلاگ</a>
+                <a wire:navigate href="/blog">وبلاگ</a>
               </li>
             </ul>
           </div>
@@ -63,16 +63,16 @@
             </h3>
             <ul>
               <li>
-                <a href="/platforms/steam">استیم</a>
+                <a  wire:navigate href="/platforms/steam">استیم</a>
               </li>
               <li>
-                <a href="/platforms/battlenet">بتل نت</a>
+                <a wire:navigate href="/platforms/battlenet">بتل نت</a>
               </li>
               <li>
-                <a href="/platforms/uplay">یوپلی</a>
+                <a wire:navigate href="/platforms/uplay">یوپلی</a>
               </li>
               <li>
-                <a href="">اگزیت لگ</a>
+                <a wire:navigate href="">اگزیت لگ</a>
               </li>
 
             </ul>

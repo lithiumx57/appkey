@@ -28,7 +28,7 @@ addClickHandler(".dialog-button", function (event) {
 })
 
 
-function dismissDialog(){
+function dismissDialog() {
   let backdrop = document.getElementById("x-backdrop")
   let id = backdrop.getAttribute("data-id")
   backdrop.classList.remove("active")
@@ -47,10 +47,12 @@ function dismissDialog(){
   // tag.style.width = (width - 30) + "px"
   // tag.style.height = (height - 30) + "px"
 
-  tag.classList.remove("active")
-  setTimeout(function () {
-    tag.classList.remove("show")
-  }, 300)
+  if (tag) {
+    tag.classList.remove("active")
+    setTimeout(function () {
+      tag.classList.remove("show")
+    }, 300)
+  }
 
 
   try {
@@ -59,10 +61,11 @@ function dismissDialog(){
   } catch (e) {
   }
 }
+
 addClickHandler(".x-backdrop", dismissDialog)
 
 
-let showBackdrop = (targetId, width, height) => {
+function showBackdrop(targetId, width, height) {
   let backdrop = document.getElementById("x-backdrop")
   backdrop.setAttribute("data-id", targetId)
   backdrop.setAttribute("data-width", width)
@@ -75,21 +78,24 @@ let showBackdrop = (targetId, width, height) => {
 }
 
 
-const observer = new MutationObserver((mutationsList) => {
-  for (let mutation of mutationsList) {
-    if (mutation.type === "attributes" && mutation.attributeName === "class") {
-      if (element.classList.contains("active")) document.body.style.overflowY = "hidden"
-      else document.body.removeAttribute("style")
+(() => {
+  const observer = new MutationObserver((mutationsList) => {
+    for (let mutation of mutationsList) {
+      if (mutation.type === "attributes" && mutation.attributeName === "class") {
+        if (element.classList.contains("active")) document.body.style.overflowY = "hidden"
+        else document.body.removeAttribute("style")
+      }
     }
-  }
-});
-const element = document.querySelector(".x-backdrop");
-observer.observe(element, {attributes: true});
+  });
+  const element = document.querySelector(".x-backdrop");
+  observer.observe(element, {attributes: true});
 
 
-document.addEventListener("DOMContentLoaded", () => {
-  window.Livewire.on("dismiss-comment", () => {
-    dismissDialog()
+  document.addEventListener("DOMContentLoaded", () => {
+    window.Livewire.on("dismiss-comment", () => {
+      dismissDialog()
+    })
   })
-})
 
+
+})()

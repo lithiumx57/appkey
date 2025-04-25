@@ -1,5 +1,15 @@
 $maxWidth: 1200px;
 
+//@import 'nprogress/nprogress.css';
+
+#nprogress {
+  height: 200px;
+  z-index: 99999999;
+  pointer-events: fill;
+  position: absolute;
+}
+
+
 @import "./consts";
 @import "./table";
 @import "./livewire";
@@ -259,4 +269,15 @@ body {
 .link {
   color: var(--full-color);
   text-decoration: none;
+}
+
+.link-bordered {
+  border-bottom: 1px dashed var(--border-color);
+}
+
+
+.c-image-container {
+  img {
+    width: 32px;
+  }
 }

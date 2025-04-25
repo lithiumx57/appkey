@@ -1,10 +1,10 @@
 import {addClickHandler} from "@/layouts/documentClickHandler.js";
 
-let themeLight = document.getElementById("theme-light");
-let themeDark = document.getElementById("theme-dark");
-let themeSwitch = document.getElementById("theme-switch");
 
 function switchTheme() {
+  let themeLight = document.getElementById("theme-light");
+  let themeDark = document.getElementById("theme-dark");
+
   if (document.body.classList.contains("dark")) {
     document.body.classList.remove("dark");
     themeDark.classList.remove("hidden");

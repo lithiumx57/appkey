@@ -12,21 +12,21 @@
 </head>
 <body class="@if(getTheme()=="dark") dark @endif">
 
-@include("layouts.header.main-header")
+<livewire:layouts.header.main-header/>
+<div class="x-button-1 menu-line"></div>
+
+<div style="width: 100%;height: 100%;position: fixed;left: 0;right: 0;top: 0;bottom: 0;z-index: 0">
+  <div class="background-light light1"></div>
+  <div class="background-light light2"></div>
+</div>
+
+<div class="x-backdrop" id="x-backdrop"></div>
 
 
-  <div style="width: 100%;height: 100%;position: fixed;left: 0;right: 0;top: 0;bottom: 0;z-index: 0">
-    <div class="background-light light1"></div>
-    <div class="background-light light2"></div>
-  </div>
-
-  <div class="x-backdrop" id="x-backdrop"></div>
-
-
-  <main id="main-content">
-    @yield("content")
-    <livewire:popup-login/>
-  </main>
+<main id="main-content">
+  @yield("content")
+  <livewire:popup-login/>
+</main>
 
 
 @if(!isset($noFooter))
@@ -36,8 +36,7 @@
   </footer>
 @endif
 
-
-  <script src="{{asset("assets/js/app.js?q=".getAssestVersion())}}"></script>
+<script src="{{asset("assets/js/app.js?q=".getAssestVersion())}}"></script>
 @yield("scripts")
 
 </body>

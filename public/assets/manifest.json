@@ -1,4 +1,9 @@
 {
+  "_nprogress-DqFoYHSr.js": {
+    "file": "assets/nprogress-DqFoYHSr.js",
+    "name": "nprogress",
+    "isDynamicEntry": true
+  },
   "resources/js/app.js": {
     "file": "js/app.js",
     "name": "app",

@@ -49,7 +49,7 @@ export default defineConfig({
   ],
   build: {
     outDir: 'public/assets',
-    minify: true,
+    minify: false,
     sourcemap: false,
     rollupOptions: {
       output: {

@@ -44,7 +44,7 @@
             </ul>
             @foreach($row["submenus"] as $submenu)
               <li>
-                <a href="{{$submenu["link"]}}">
+                <a wire:navigate href="{{$submenu["link"]}}">
                   {{$submenu["title_fa"]}}
                 </a>
               </li>

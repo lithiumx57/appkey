@@ -10,7 +10,7 @@
       <div class="swiper-wrapper p-2 box-slider">
 
         @foreach($records as $row)
-          <a href="{{$row["link"]}}" class="swiper-slide box  product s-product position-relative ">
+          <a wire:navigate href="{{$row["link"]}}" class="swiper-slide box  product s-product position-relative ">
             {!! buildChachedImage($row["image"]) !!}
             <p>
               {{$row["title_fa"]}}

@@ -9,7 +9,6 @@ use App\Models\Gallery;
 use App\Models\Product;
 use App\Panel\Models\Attachment;
 use App\Panel\UiHandler\Elements\XMediaChooser;
-use App\Repositories\Contracts\ProductRepositoryInterface;
 use App\View\Ui\AttachmentLoader;
 use Illuminate\Support\Facades\DB;
 

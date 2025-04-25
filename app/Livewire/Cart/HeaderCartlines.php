@@ -11,11 +11,13 @@ class HeaderCartlines extends Component
 
   protected $listeners = [
     "refresh-header-cart" => '$refresh',
+    "cart-refresh" => '$refresh',
   ];
 
 
   public function render()
   {
+
     $cart = app(CartRepositoryInterface::class);
     $quantity=$cart->getCount();
     $lines=$cart->getLines();

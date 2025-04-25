@@ -1,4 +1,20 @@
 new Swiper(".main-slider", {
+
+  on: {
+    click(swiper, event) {
+
+      const target = event.target.closest('a[wire\\:navigate]');
+
+      if (target) {
+        const simulatedClick = new MouseEvent('click', {
+          bubbles: true,
+          cancelable: true,
+          view: window,
+        });
+        target.dispatchEvent(simulatedClick);
+      }
+    }
+  },
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
@@ -57,6 +73,22 @@ new Swiper(".main-slider", {
 });
 
 new Swiper(".product-slider", {
+
+  on: {
+    click(swiper, event) {
+
+      const target = event.target.closest('a[wire\\:navigate]');
+
+      if (target) {
+        const simulatedClick = new MouseEvent('click', {
+          bubbles: true,
+          cancelable: true,
+          view: window,
+        });
+        target.dispatchEvent(simulatedClick);
+      }
+    }
+  },
   slidesPerView: 2.8,
   spaceBetween: 8,
 
@@ -103,6 +135,22 @@ new Swiper(".product-slider", {
 });
 
 new Swiper(".category-slider", {
+
+  on: {
+    click(swiper, event) {
+
+      const target = event.target.closest('a[wire\\:navigate]');
+
+      if (target) {
+        const simulatedClick = new MouseEvent('click', {
+          bubbles: true,
+          cancelable: true,
+          view: window,
+        });
+        target.dispatchEvent(simulatedClick);
+      }
+    }
+  },
   slidesPerView: 4,
   spaceBetween: 8,
   pagination: {
@@ -137,7 +185,26 @@ new Swiper(".category-slider", {
   },
 });
 
+
+
 new Swiper(".blog-slider", {
+
+  on: {
+    click(swiper, event) {
+
+      const target = event.target.closest('a[wire\\:navigate]');
+
+      if (target) {
+        const simulatedClick = new MouseEvent('click', {
+          bubbles: true,
+          cancelable: true,
+          view: window,
+        });
+        target.dispatchEvent(simulatedClick);
+      }
+    }
+  },
+
   spaceBetween: 8,
   pagination: {
     el: ".swiper-pagination",

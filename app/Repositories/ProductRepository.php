@@ -16,6 +16,11 @@ class ProductRepository implements ProductRepositoryInterface
     return Product::where('slug', $slug)->firstOrFail();
   }
 
+  public function getGallery()
+  {
+    return $this->cachedData["gallery"];
+  }
+
   public function loadFromCache($slug = null): array
   {
     if ($this->cachedData != null) return $this->cachedData;

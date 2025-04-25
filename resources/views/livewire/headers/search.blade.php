@@ -14,30 +14,19 @@
     <div class="search-result">
       @foreach($products as $row)
 
-        <div class="search-row">
+        <a wire:navigate href="{{$row->value["link"]}}" class="search-row link">
+
           <div style="display: flex">
 {{--            <img src="{{$row->getImage("webp",250)}}" alt="" style="border-radius: var(--border-radius);width: 80px">--}}
             <img src="{{@$row->value["smallImagePath"]}}" alt="" style="border-radius: var(--border-radius);width: 80px">
           </div>
           <div style="padding-right: 16px">
-            <div style="font-size: 16px;font-weight: bold">
-{{--              {{$row->name_fa}}--}}
-            </div>
-            <div style="margin-top: 8px">
-              پلتفرم :
-{{--              {{$row->getAttr("platform")}}--}}
-            </div>
-            <div>
-              کنسول :
-{{--              {{$row->getAttr("console")}}--}}
+            <div style="font-size: 16px;font-weight: bold;margin-top: 8px">
+              {{$row->value["name_fa"]}}
             </div>
 
-            <div>
-              شرکت سازنده :
-{{--              {{$row->getAttr("creator")}}--}}
-            </div>
           </div>
-        </div>
+        </a>
       @endforeach
     </div>
 

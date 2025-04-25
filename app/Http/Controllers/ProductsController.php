@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Infrastructure\Product\ProductCacheRegenerate;
-use App\Models\Product;
 use App\Repositories\Contracts\ProductRepositoryInterface;
 use App\Services\SeoService;
 

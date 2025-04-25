@@ -4,5 +4,4 @@
 @endsection
 @section("content")
   <livewire:search.search-page :q="$q"/>
-
 @endsection

@@ -26,7 +26,7 @@
           <td>{{number_format($order->price)}}</td>
           <td>{{$order->translateStatus()}}</td>
           <td>
-            <a data-change-url="true" class="livewire-mode" data-emit="{{json_encode(["path"=>"orders","p1"=>"show","p2"=>1])}}" data-listener="profile-navigation-changed" href="/profile/orders/show/1">
+            <a wire:navigate data-change-url="true" class="livewire-mode" data-emit="{{json_encode(["path"=>"orders","p1"=>"show","p2"=>1])}}" data-listener="profile-navigation-changed" href="/profile/orders/show/1">
               <button class="x-button-1" wire:click="sendComment">
                 <span class="text">جزئیات سفارش</span>
               </button>

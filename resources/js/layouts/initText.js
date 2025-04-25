@@ -57,7 +57,11 @@ addClickHandler(".head_li", function (event) {
 
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".suggest").forEach((el) => {
-    el.getElementsByTagName("a")[0].classList.add("show-in-iframe")
+
+    let result = el.getElementsByTagName("a")
+    if (result.length > 0) {
+      el.getElementsByTagName("a")[0].classList.add("show-in-iframe")
+    }
     let tag = document.createElement("span");
 
 

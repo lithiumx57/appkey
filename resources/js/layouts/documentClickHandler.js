@@ -1,33 +1,30 @@
-let targets = {}
+if (!window.targets) {
+  window.targets = {};
+}
 
-
-document.addEventListener("click", (event) => {
-
-  for (let target in targets) {
-    let tClass = target.replace(".", "")
-    let tId = target.replace("#", "")
-
-    if (event.target.classList.contains(tClass)) {
-      let func = targets[target]
-      func(event)
+if (!window.addClickHandler) {
+  window.addClickHandler = (target, cb) => {
+    if (!window.targets[target]) {
+      window.targets[target] = cb;
     }
+  };
+}
 
-    if (event.target.getAttribute("id") === tId) {
-      let func = targets[target]
-      func(event)
+if (!window._clickHandlerInitialized) {
+  document.addEventListener("click", (event) => {
+    for (let target in window.targets) {
+      let tClass = target.replace(".", "");
+      let tId = target.replace("#", "");
+
+      if (event.target.classList.contains(tClass) || event.target.getAttribute("id") === tId) {
+        let func = window.targets[target];
+        func(event);
+      }
     }
-  }
-})
+  });
 
-let addClickHandler = (target, cb) => {
-  if (!targets[target]) {
-    targets[target] = cb
-  }
+  window._clickHandlerInitialized = true;
 }
 
 
-export {
-  addClickHandler
-}
-
-
+export var addClickHandler = window.addClickHandler;

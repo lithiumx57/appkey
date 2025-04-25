@@ -130,6 +130,21 @@
     });
 
     var swiper = new Swiper(".product-gallery-swiper", {
+      on: {
+        click(swiper, event) {
+
+          const target = event.target.closest('a[wire\\:navigate]');
+
+          if (target) {
+            const simulatedClick = new MouseEvent('click', {
+              bubbles: true,
+              cancelable: true,
+              view: window,
+            });
+            target.dispatchEvent(simulatedClick);
+          }
+        }
+      },
       spaceBetween: 8,
       pagination: {
         el: ".swiper-pagination",

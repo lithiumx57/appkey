@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Panel\helpers\XModelHelper;
 use App\Panel\Models\Attachment;
+use Exception;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
@@ -36,9 +37,16 @@ class Price extends Model
     return true;
   }
 
-  public function getImage()
+  public function getImage(): string
   {
-    return Attachment::find($this->product->getImage());
+
+    try {
+      $attachment = Attachment::find($this->product->image);
+      return buildAttachmentPaths($attachment, 64, ["webp", 'jpg'], "products", $this->product->slug);
+    } catch (Exception $e) {
+      //todo default image for product
+      return "";
+    }
   }
 
   public function buildCache(): array
@@ -52,12 +60,11 @@ class Price extends Model
       $attributes[Attribute::find($attachmentValue->attribute_id)->label] = $attachmentValue->title_fa;
     }
 
-    $attachment = $this->getImage();
-
     return [
       "attributes" => $attributes,
       "title" => $this->product->name_fa,
-      "image" => $attachment,
+      "image" => $this->getImage(),
+      "link"=>$this->product->getLink(),
     ];
   }
 

@@ -1,5 +1,10 @@
 <div>
   <span id="caret-cart"></span>
+
+  @if($quantity>0)
+    <span style="position: relative;background: #ff4444;top: -10px;right: -32px;display: inline-block;min-width: 20px;height: 20px;border-radius: 100%;text-align: center;font-size: 12px;line-height: 24px">{{$quantity}}</span>
+  @endif
+
   <div class="box" id="header-cart-items" style="z-index: 9999;padding: 8px">
     @if($quantity > 0)
       <div style="position: relative">
@@ -13,12 +18,16 @@
                 <span style="background: #ff4444;position: absolute;display: inline-block;width: 20px;height: 20px;border-radius: 100%;color: #fff;text-align: center;top: 0;right: -8px">
                     {{$line->qty}}
                 </span>
-              <img src="{{@$line->cache["image"]}}" style="width: 42px" alt="">
+              <div class="c-image-container">
+                {!! buildChachedImage($line->cache["image"]) !!}
+              </div>
               <div style="padding-right: 8px;font-size: 12px;line-height: 16px">
                 <div style="font-size: 15px">
-                  {{$line->cache["title"]}}
+                  <a wire:navigate class="link link-bordered" href="{{$line->cache["link"]}}">
+                    {{$line->cache["title"]}}
+                  </a>
                 </div>
-                <div style="padding-top: 4px">
+                <div style="padding-top: 4px;margin-top: 8px">
                   {{implode(",",$line->cache["attributes"])}}
                 </div>
               </div>
@@ -32,7 +41,7 @@
               </div>
             </div>
             <div>
-              <a href="/cart" class="notd header-link">
+              <a wire:navigate href="/cart" class="notd header-link">
                 <button class="x-button-2 p-2">
                   <span class="text">سبد خرید</span>
                 </button>

@@ -3,33 +3,33 @@
   <div class="navigation box profile-navigation  @if($path!="/") mobile-hidden desktop-show @endif">
     <ul class="w-100">
       <li class="box">
-        <a href="/profile" class="livewire-mode  p-nav-link {{$path=="/"?"active":""}}" data-emit="/" data-listener="profile-navigation-changed">
+        <a wire:navigate href="/profile" class="livewire-mode  p-nav-link {{$path=="/"?"active":""}}" data-emit="/" data-listener="profile-navigation-changed">
           <x-font-icons.dounble-angle-left width="12" height="12"/>
           داشبورد
         </a>
       </li>
       <li class="box">
-        <a href="/profile/wallet" data-change-url="true" class="livewire-mode p-nav-link {{$path=="wallet"?"active":""}}" data-emit="wallet" data-listener="profile-navigation-changed">
+        <a wire:navigate  wire:navigate href="/profile/wallet" data-change-url="true" class="livewire-mode p-nav-link {{$path=="wallet"?"active":""}}" data-emit="wallet" data-listener="profile-navigation-changed">
           <x-font-icons.dounble-angle-left width="12" height="12"/>
           کیف پول
         </a>
       </li>
       <li class="box">
-        <a href="/profile/orders" data-change-url="true" class="livewire-mode p-nav-link {{$path=="orders"?"active":""}}" data-emit="orders" data-listener="profile-navigation-changed">
+        <a wire:navigate  wire:navigate href="/profile/orders" data-change-url="true" class="livewire-mode p-nav-link {{$path=="orders"?"active":""}}" data-emit="orders" data-listener="profile-navigation-changed">
           <x-font-icons.dounble-angle-left width="12" height="12"/>
           سفارشات
         </a>
       </li>
 
       <li class="box">
-        <a href="/profile/favorites" data-change-url="true" class="livewire-mode p-nav-link {{$path=="favorites"?"active":""}}" data-emit="favorites" data-listener="profile-navigation-changed">
+        <a wire:navigate  wire:navigate href="/profile/favorites" data-change-url="true" class="livewire-mode p-nav-link {{$path=="favorites"?"active":""}}" data-emit="favorites" data-listener="profile-navigation-changed">
           <x-font-icons.dounble-angle-left width="12" height="12"/>
           علاقه مندی ها
         </a>
       </li>
 
       <li class="box">
-        <a href="/profile/authentication" data-change-url="true" class="livewire-mode p-nav-link {{$path=="authentication"?"active":""}}" data-emit="authentication" data-listener="profile-navigation-changed">
+        <a wire:navigate  wire:navigate href="/profile/authentication" data-change-url="true" class="livewire-mode p-nav-link {{$path=="authentication"?"active":""}}" data-emit="authentication" data-listener="profile-navigation-changed">
           <x-font-icons.dounble-angle-left width="12" height="12"/>
           احراز هویت
         </a>

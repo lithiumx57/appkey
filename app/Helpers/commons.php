@@ -7,7 +7,6 @@ use App\Infrastructure\Validation\Validation;
 use App\Panel\Models\Attachment;
 use App\View\Ui\AttachmentLoader;
 use App\View\Ui\ImageLoader;
-use Kavenegar\KavenegarApi;
 
 function send($code, $mobile): void
 {
@@ -154,3 +153,10 @@ function buildText($text):string|null
 {
   return \App\Helpers\Html\HtmlDataExtract::init($text);
 }
+
+function isMobile()
+{
+  $agent = new Jenssegers\Agent\Agent();
+  return $agent->isMobile() || $agent->isTablet();
+}
+
