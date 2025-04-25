@@ -27,7 +27,7 @@
       background: var(--input-background);
       border: 1px solid var(--border-color);
       width: 480px;
-      max-width: calc(100% - 96px);
+      max-width: calc(100% - 32px);
       margin: auto;
       display: block;
       top: 64px;

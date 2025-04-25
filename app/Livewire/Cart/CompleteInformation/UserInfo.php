@@ -5,6 +5,7 @@ namespace App\Livewire\Cart\CompleteInformation;
 use App\Infrastructure\Cart\Coupon\Validation\CouponValidator;
 use App\Models\Cart;
 use App\Models\Gateway;
+use App\Repositories\Contracts\CartRepositoryInterface;
 use Exception;
 use Livewire\Component;
 
@@ -35,7 +36,7 @@ class UserInfo extends Component
     $this->name = auth()->user()->name;
     $this->email = auth()->user()->email;
     $this->phone = auth()->user()->username;
-    $this->description = Cart::mine(true)->description;
+    $this->description = app(CartRepositoryInterface::class)->get()->description;
     $this->gateways = Gateway::where("approved", true)->orderBy("position", "ASC")->get();
     $this->selectedGateway = $this->gateways->get(0);
   }
@@ -50,10 +51,11 @@ class UserInfo extends Component
         "name" => $this->name,
         "email" => $this->email,
       ]);
-      Cart::mine(true)->update([
+      app(CartRepositoryInterface::class)->updateInfo([
         "description" => $this->description,
         "gateway_id" => $this->selectedGateway->id,
       ]);
+
       $this->redirect("/cart/complete");
     } catch (Exception $exception) {
       toast($this, $exception->getMessage(), "error");
@@ -73,7 +75,7 @@ class UserInfo extends Component
   public function render()
   {
     $user = auth()->user();
-    $cart = Cart::mine(false);
+    $cart =   app(CartRepositoryInterface::class)->get();
     return view('livewire.cart.complete-information.user-info', compact("user", "cart"));
   }
 }

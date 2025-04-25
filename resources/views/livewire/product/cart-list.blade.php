@@ -9,7 +9,7 @@
       <a href="/cart" class="link-mode">برو به سبد خرید</a>
     </div>
   </div>
-  <div class="x-container mt-2 box cart-list p-4 p-bg">
+  <div class="x-container mt-2 box cart-list p-4 p-bg oya">
       <div class="table-responsive">
         <table class="table table-bordered tac mb-0">
           <tr>

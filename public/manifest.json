@@ -1,0 +1,16 @@
+{
+  "name": "AppKey",
+  "short_name": "AppKey",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#222",
+  "theme_color": "#000000",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/assets/app/logo.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ]
+}

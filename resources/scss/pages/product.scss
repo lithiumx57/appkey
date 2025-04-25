@@ -242,9 +242,25 @@
 
 @media (max-width: 768px) {
 
-  .image-part {
+  .share-part{
     position: relative;
-    top: -20px;
+    top: -36px;
+  }
+
+  h1{
+    position: relative;
+    top: -16px;
+  }
+
+  .product-details{
+    margin-top: 48px;
+  }
+
+  .image-part {
+    img{
+      position: relative;
+      top: -44px;
+    }
   }
 
   .x-button-1 {
@@ -352,6 +368,7 @@
 
     img {
       height: auto !important;
+
     }
   }
 

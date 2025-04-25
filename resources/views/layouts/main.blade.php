@@ -7,6 +7,13 @@
   <meta name="robots" content="noindex">
   <link rel="preload" href="{{asset("assets/fonts/woff2/YekanBakhFaNum-Regular.woff2")}}" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="stylesheet" href="{{asset("assets/css/layout.css?q=".getAssestVersion())}}">
+
+  <link rel="manifest" href="{{ asset('manifest.json') }}">
+  <meta name="theme-color" content="#000000">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="apple-touch-icon" href="{{ asset('assets/app/logo.png') }}">
+
   @yield("styles")
 
 </head>
@@ -38,6 +45,17 @@
 
 <script src="{{asset("assets/js/app.js?q=".getAssestVersion())}}"></script>
 @yield("scripts")
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then(function (registration) {
+        console.log('ServiceWorker registered with scope:', registration.scope);
+      }).catch(function (error) {
+      console.log('ServiceWorker registration failed:', error);
+    });
+  }
+</script>
 
 </body>
 </html>

@@ -7,6 +7,7 @@ use App\Infrastructure\Cart\Validation\CartValidation;
 use App\Infrastructure\Payment\PaymentManager;
 use App\Models\Cart;
 use App\Models\Order;
+use App\Repositories\Contracts\CartRepositoryInterface;
 use Error;
 use Exception;
 use Throwable;
@@ -28,8 +29,8 @@ class CartsController extends Controller
 
   public function completeInformation()
   {
-    $cart = Cart::mine(false);
-    if (!$cart || $cart->lines()->count() == 0) return redirect("/cart");
+    $cart=resolve(CartRepositoryInterface::class);
+    if (!$cart->get() || $cart->getLines()->count() == 0) return redirect("/cart");
     return view('pages.cart-complete');
   }
 

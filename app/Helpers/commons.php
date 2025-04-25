@@ -116,6 +116,7 @@ function getAssestVersion(): int
 }
 
 
+
 function getTheme(): string
 {
   $cookies = $_SERVER["HTTP_COOKIE"] ?? '';

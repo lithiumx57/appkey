@@ -142,4 +142,9 @@ class CartRepository implements CartRepositoryInterface
     foreach ($lines as $line) $records[] = $line;
     return $records;
   }
+
+  public function updateInfo(array $data): void
+  {
+    $this->cart->update($data);
+  }
 }

@@ -4,7 +4,7 @@
 
     @if(mb_strlen(trim($keyword)) ==0)
       <div class="tac pt-3" style="font-size: 15px">
-        لطفا برنامه یا بازی خود را جست و جو کنید
+        لطفا برنامه یا بازی مورد نظر خود را جست و جو کنید
       </div>
     @elseif(count($products) ==  0 )
       <div class="tac pt-3" style="font-size: 15px">

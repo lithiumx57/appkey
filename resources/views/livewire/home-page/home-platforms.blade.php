@@ -5,7 +5,7 @@
     <span class="box-title p-bg">
       پلتفرم ها :
     </span>
-        <a href="/platforms" class="link">
+        <a wire:navigate href="/platforms" class="link">
           بیشتر >
         </a>
       </div>

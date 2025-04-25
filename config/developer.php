@@ -1,7 +1,7 @@
 <?php
 
 return [
-  "isLocal" => true,
+  "isLocal" => false,
   "regenerateProduct" => false,
   "regenerateHome" => false,
   "regeneratePlatforms" => false,

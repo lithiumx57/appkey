@@ -8,7 +8,9 @@
     </svg>
   </span>
     <div class="header-logo">
-      <span class="p1">App</span><span class="p2">Key</span>
+      <a wire:navigate href="/" class="link">
+        <span class="p1">App</span><span class="p2">Key</span>
+      </a>
     </div>
     <div class="mobile-notifications">
       <x-theme-switcher width="24" height="32"/>

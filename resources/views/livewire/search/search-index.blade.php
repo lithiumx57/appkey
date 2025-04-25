@@ -7,7 +7,7 @@
 
   <div style="position: absolute;top: 120px;width: calc(100% - 40px);margin-right: 16px">
     @foreach($records as $row)
-      <div style="display: flex;background: #fff;padding: 8px;border-radius: var(--border-radius);margin-top: 8px;align-items: center">
+      <div style="display: flex;background: var(--background-color);padding: 8px;border-radius: var(--border-radius);margin-top: 8px;align-items: center">
         <div style="display: flex">
           <img src="{{$row->getImage("webp",250)}}" alt="" style="border-radius: var(--border-radius);width: 42px;height: 54px">
         </div>
@@ -23,4 +23,6 @@
     @endforeach
   </div>
 
+
+  <livewire:layouts.bottom-navigation/>
 </div>

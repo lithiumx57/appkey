@@ -3,7 +3,6 @@
     constructor() {
       super();
 
-      // جلو گیری از دوباره initialize شدن در SPA
       if (this.shadowRoot) return;
 
       const frameWidth = this.getAttribute("data-width") || 150;
@@ -13,7 +12,7 @@
       this.frameHeight = frameHeight;
       this.frames = [];
       this.currentAngle = 0;
-      this.increment = 0.5;
+      this.increment = .16;
       this.initialized = false;
 
       this.attachShadow({ mode: "open" });
@@ -79,24 +78,45 @@
 
     setupListeners() {
       this.carouselContainer.addEventListener("mousemove", (event) => {
-        this.carouselContainer.style.removeProperty("transition");
         const containerRect = this.getBoundingClientRect();
-        const mouseY = event.clientY - containerRect.top;
-        const percentY = ((mouseY - this.midY) / this.midY) * 30 + 30;
-        this.carouselContainer.style.perspectiveOrigin = `50% ${percentY}%`;
-
         const mouseX = event.clientX - containerRect.left;
-        if (mouseX > this.midX - 25 && mouseX < this.midX + 25) {
-          this.increment = 0;
+
+        if (mouseX > this.midX + 25) {
+          this.increment = 0.16;
+        } else if (mouseX < this.midX - 25) {
+          this.increment = -0.16;
         } else {
-          const percentX = (mouseX - this.midX) / this.midX;
-          this.increment = 360 / (150 / percentX);
+          this.increment = 0;
         }
       });
 
       this.carouselContainer.addEventListener("mouseout", () => {
-        this.carouselContainer.style.perspectiveOrigin = "50% 30%";
-        this.carouselContainer.style.transition = "perspective-origin .5s ease-in-out";
+        this.increment = 0.16; // بازگرداندن به چرخش پیش‌فرض هنگام خروج موس
+      });
+
+      let lastTouchX = null;
+
+      this.carouselContainer.addEventListener("touchstart", (e) => {
+        if (e.touches.length === 1) {
+          lastTouchX = e.touches[0].clientX;
+        }
+      });
+
+      this.carouselContainer.addEventListener("touchmove", (e) => {
+        if (e.touches.length === 1 && lastTouchX !== null) {
+          const currentX = e.touches[0].clientX;
+          const deltaX = currentX - lastTouchX;
+
+          if (Math.abs(deltaX) > 5) {
+            this.increment = deltaX > 0 ? 0.16 : -0.16;
+            lastTouchX = currentX;
+          }
+        }
+      });
+
+      this.carouselContainer.addEventListener("touchend", () => {
+        lastTouchX = null;
+        this.increment = 0.16; // بازگرداندن به چرخش پیش‌فرض بعد از پایان لمس
       });
 
       window.addEventListener("resize", () => {
@@ -104,6 +124,7 @@
         this.midY = this.clientHeight / 2;
       });
     }
+
 
     rotateCarousel() {
       if (this.currentAngle % 360 > -Math.abs(this.increment) &&

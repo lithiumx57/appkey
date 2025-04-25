@@ -1,7 +1,7 @@
 <div class="p-list-container">
   <div class="x-container container-fluid p-list">
     @foreach($records as $product)
-      <a href="{{$product->getLink()}}" class="product-row">
+      <a wire:navigate href="{{$product->getLink()}}" class="product-row">
         <div class="product box m-0">
           <img src="{{$product->getImage("webp",1920)}}" alt="{{$product->name_en}}">
           <div class="ps-1">

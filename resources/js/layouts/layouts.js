@@ -10,23 +10,6 @@ import "./np-navigate.js"
 import {addClickHandler} from "@/layouts/documentClickHandler.js";
 
 
-addClickHandler(".check-is-mobile-for-navigate", function (event) {
-  alert(1)
-  const el = event.target;
-
-
-  el.addEventListener('click', function (e) {
-    const isSmall = window.innerWidth <= 768;
-
-    if (isSmall) {
-      e.preventDefault();
-      e.stopImmediatePropagation();
-      console.log("موبایله، wire:navigate اجرا نشد");
-    } else {
-      console.log("not small")
-    }
-  });
-})
 
 document.addEventListener("keyup", (event) => {
   if (event.target.classList.contains("number-format")) {

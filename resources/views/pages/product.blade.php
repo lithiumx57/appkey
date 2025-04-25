@@ -7,7 +7,8 @@
 
 @section("content")
 
-  <x-breadcrumb :records="$product['breadcrumb']" clazz="p-breadcrumb"/>
+  <livewire:layouts.breadcrumb  :records="$product['breadcrumb']" clazz="p-breadcrumb"/>
+
 
 
 {{--  <div style="position: fixed;z-index: -1;width: 100vw;height: 100vh;left: 0;right: 0;top: 0;--}}
@@ -22,7 +23,7 @@
     <div class="product-container">
       <div class="image-part">
         {!! buildChachedImage($product["mainImage"]) !!}
-        <div class="d-flex justify-content-center mt-2">
+        <div class="d-flex justify-content-center share-part">
           <livewire:product.favorite-icon model="product" :id="$product['id']"/>
           &nbsp;&nbsp;
           &nbsp;&nbsp;

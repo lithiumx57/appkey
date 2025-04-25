@@ -14,6 +14,8 @@ interface CartRepositoryInterface
 
   public function computeAmount();
 
+  public function updateInfo(array $data): void;
+
   public function computeDiscount();
 
   public function hasCoupon(): bool;
