@@ -13,8 +13,10 @@ return new class extends Migration {
       $table->string('name');
       $table->string('label');
       $table->string('slug');
+      $table->unsignedBigInteger('image');
       $table->string('seo_title')->nullable();
       $table->text('seo_meta')->nullable();
+      $table->text('model')->nullable();
       $table->longText('description')->nullable();
       $table->unsignedBigInteger('parent')->default(0);
       $table->unsignedInteger("position")->default(0);

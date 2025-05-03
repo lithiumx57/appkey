@@ -9,6 +9,7 @@ use App\Panel\Dynamic\LiModel;
  * @property $title
  * @property $link
  * @property $type
+ * @property $approved
  * @property $svg
  * @property $position
  */
@@ -41,6 +42,7 @@ class Social extends LiModel
       xField()->select("type")->options(self::TYPES)->showInTable()->label("تایپ"),
       xField()->string("title")->label("عنوان")->showInTable()->center(),
       xField()->string("link")->linkMode()->label("لینک")->showInTable()->ltr(),
+      xField()->bool("approved")->switchable()->label("فعال")->tdLabel("وضعیتس")->showInTable()->ltr(),
       xField()->text("svg")->label("svg")->showInTable()->ltr(),
     ];
   }

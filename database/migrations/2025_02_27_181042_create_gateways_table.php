@@ -18,7 +18,7 @@ return new class extends Migration {
       $table->integer('position')->default(0);
       $table->integer('tax');
       $table->boolean('approved')->default(false);
-      $table->string('image');
+      $table->unsignedBigInteger('image');
       $table->timestamps();
     });
   }

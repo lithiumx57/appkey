@@ -18,6 +18,8 @@ return new class extends Migration {
       $table->unsignedBigInteger('value');
       $table->foreign('value')->references("id")->on("attribute_values")->onDelete('cascade');
 
+      $table->boolean("change_price")->default(false);
+
       $table->primary(['product_id', 'attribute_id', 'value']);
 
     });

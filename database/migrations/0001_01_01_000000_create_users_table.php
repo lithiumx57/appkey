@@ -11,8 +11,17 @@ return new class extends Migration {
     Schema::create('users', function (Blueprint $table) {
       $table->id();
       $table->string('name');
+      $table->string('family');
+      $table->string('mobile')->unique();
+      $table->unsignedInteger('wallet')->default(0);
+      $table->timestamp('birthday')->nullable();
+      $table->string('nation_code')->nullable();
+      $table->string('avatar')->nullable();
+      $table->string('credit')->nullable();
+      $table->boolean('credit_confirmed')->nullable()->default(false);
       $table->string('username')->unique();
       $table->string('password');
+      $table->string('email')->unique();
       $table->rememberToken();
       $table->timestamps();
     });

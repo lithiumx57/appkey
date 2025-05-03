@@ -14,8 +14,12 @@ return new class extends Migration {
       $table->id();
       $table->string('name_fa');
       $table->string('name_en');
-      $table->text('image')->default(0);
-      $table->text('background')->default(0);
+      $table->string('slug')->default(0);
+      $table->unsignedBigInteger('image')->default(0);
+      $table->text("data")->nullable();
+      $table->text("_tags")->nullable();
+      $table->text("_attributes")->nullable();
+      $table->string("delivery_type")->nullable();
 
       $table->unsignedBigInteger('user_id');
       $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
@@ -31,7 +35,7 @@ return new class extends Migration {
       $table->text("seo_title")->nullable();
       $table->text("seo_meta")->nullable();
 
-      $table->text('score')->nullable();
+      $table->float('score')->nullable();
       $table->longText('description')->nullable();
 
       $table->softDeletes();

@@ -13,6 +13,7 @@ return new class extends Migration {
       $table->foreign("attribute_id")->references("id")->on("attributes")->onDelete("cascade");
       $table->string("title_fa");
       $table->string("title_en");
+      $table->unsignedBigInteger("image")->nullable();
       $table->text("hint")->nullable();
       $table->string("slug");
       $table->boolean("approved");

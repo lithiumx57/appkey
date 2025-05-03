@@ -13,7 +13,9 @@ return new class extends Migration {
       $table->string('session_id')->nullable();
       $table->integer('user_id')->nullable()->default(0);
       $table->integer('amount')->nullable()->default(0);
+      $table->unsignedBigInteger('gateway_id')->nullable()->default(0);
       $table->unsignedBigInteger('coupon_id')->nullable()->default(0);
+      $table->text('description')->nullable();
       $table->timestamps();
     });
 
@@ -27,6 +29,7 @@ return new class extends Migration {
       $table->foreign('price_id')->references('id')->on('prices')->onDelete('cascade');
       $table->longText('data')->nullable();
       $table->unsignedSmallInteger("qty")->default(1);
+      $table->text("cache")->nullable();
     });
   }
 

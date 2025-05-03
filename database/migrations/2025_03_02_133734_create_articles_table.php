@@ -19,8 +19,10 @@ return new class extends Migration {
       $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
       $table->string('time_to_read')->nullable();
+      $table->text('short_description');
       $table->longText('description');
-      $table->integer("image");
+      $table->longText('cached_data');
+      $table->unsignedBigInteger("image");
       $table->boolean("approved");
       $table->text("_search")->nullable();
       $table->integer("commments_count")->default(0);

@@ -8,8 +8,10 @@ use App\Infrastructure\Payment\Factories\ZarinpalDriverFactory;
 use App\Infrastructure\Payment\PaymentHandler;
 use App\Models\Article;
 use App\Models\Product;
+use App\Models\Social;
 use App\Observers\ArticleObserver;
 use App\Observers\ProductObserver;
+use App\Observers\SocialObserver;
 use App\Repositories\BlogRepository;
 use App\Repositories\CacheRepository;
 use App\Repositories\CartRepository;
@@ -17,7 +19,9 @@ use App\Repositories\Contracts\BlogRepositoryInterface;
 use App\Repositories\Contracts\CacheRepositoryInterface;
 use App\Repositories\Contracts\CartRepositoryInterface;
 use App\Repositories\Contracts\ProductRepositoryInterface;
+use App\Repositories\Contracts\SocialRepositoryInterface;
 use App\Repositories\ProductRepository;
+use App\Repositories\SocialRepository;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 
@@ -34,6 +38,7 @@ class AppServiceProvider extends ServiceProvider
     $this->app->bind(CartRepositoryInterface::class, CartRepository::class);
     $this->app->bind(CacheRepositoryInterface::class, CacheRepository::class);
     $this->app->bind(BlogRepositoryInterface::class, BlogRepository::class);
+    $this->app->bind(SocialRepositoryInterface::class, SocialRepository::class);
 
 
   }
@@ -48,6 +53,7 @@ class AppServiceProvider extends ServiceProvider
     $this->app->singleton(CartRepositoryInterface::class, CartRepository::class);
     Product::observe(ProductObserver::class);
     Article::observe(ArticleObserver::class);
+    Social::observe(SocialObserver::class);
 
   }
 }
